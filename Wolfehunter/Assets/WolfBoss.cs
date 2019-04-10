@@ -14,7 +14,6 @@ public class WolfBoss : Enemy
     private bool onlyOnce;
     private bool canAttack = true;
     private bool attacking;
-
     private bool fov;
     [SerializeField] private BoxCollider attackCol;
     [SerializeField] private BoxCollider tailCol;
@@ -80,7 +79,6 @@ public class WolfBoss : Enemy
         {
             Vector3 targetDir = player.transform.position - transform.position;
             float angleToPlayer = (Vector3.Angle(targetDir, transform.forward));
-
             if (angleToPlayer >= -90 && angleToPlayer <= 90)
             { // 180° FOV
                 fov = true;
@@ -175,8 +173,8 @@ public class WolfBoss : Enemy
     public override void GetHit()
     {
 
-      //  anim.SetTrigger("IsHit");
-     //   canAttack = false;
-   //     Invoke("Reset", 1f);
+        //  anim.SetTrigger("IsHit");
+        //   canAttack = false;
+        //     Invoke("Reset", 1f);
     }
 }

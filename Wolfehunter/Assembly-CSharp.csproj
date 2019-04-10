@@ -209,7 +209,6 @@
     <Compile Include="Assets\Assets\Tools\Standard Assets\Vehicles\Car\Scripts\SkidTrail.cs" />
     <Compile Include="Assets\Assets\Tools\Standard Assets\Vehicles\Car\Scripts\Suspension.cs" />
     <Compile Include="Assets\Assets\Tools\Standard Assets\Vehicles\Car\Scripts\WheelEffects.cs" />
-    <Compile Include="Assets\DodgeDetect.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\SceneAndURLLoader.cs" />
@@ -219,6 +218,7 @@
     <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
     <Compile Include="Assets\Scripts\AI\Enemy\Enemy.cs" />
+    <Compile Include="Assets\Scripts\AI\Enemy\Wolf\TailAttack.cs" />
     <Compile Include="Assets\Scripts\AI\Enemy\Wolf\Wolf.cs" />
     <Compile Include="Assets\Scripts\AI\Enemy\Wolf\WolfAttack.cs" />
     <Compile Include="Assets\Scripts\AI\Friendly\Animals\Animal.cs" />
@@ -258,9 +258,9 @@
     <Compile Include="Assets\Scripts\Trap\FireArrows.cs" />
     <Compile Include="Assets\Scripts\UI\Loading.cs" />
     <Compile Include="Assets\Scripts\WithinRange\Detector.cs" />
+    <Compile Include="Assets\Scripts\WithinRange\DodgeDetect.cs" />
     <Compile Include="Assets\Scripts\WithinRange\WithinRangeBone.cs" />
     <Compile Include="Assets\Scripts\WithinRange\WithinRangeStatue.cs" />
-    <Compile Include="Assets\TailAttack.cs" />
     <Compile Include="Assets\WolfBoss.cs" />
     <None Include="Assets\Assets\Tools\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
     <None Include="Assets\Assets\Tools\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
@@ -327,25 +327,25 @@
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>F:/Unity Projects/Wolfehunter/Team-03-7738/Wolfehunter/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>F:/Unity Projects/WOLFE REPO/Team-03-7738-2/Wolfehunter/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>F:/Unity Projects/Wolfehunter/Team-03-7738/Wolfehunter/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>F:/Unity Projects/WOLFE REPO/Team-03-7738-2/Wolfehunter/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>F:/Unity Projects/Wolfehunter/Team-03-7738/Wolfehunter/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>F:/Unity Projects/WOLFE REPO/Team-03-7738-2/Wolfehunter/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Editor">
-      <HintPath>F:/Unity Projects/Wolfehunter/Team-03-7738/Wolfehunter/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+      <HintPath>F:/Unity Projects/WOLFE REPO/Team-03-7738-2/Wolfehunter/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Runtime">
-      <HintPath>F:/Unity Projects/Wolfehunter/Team-03-7738/Wolfehunter/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
+      <HintPath>F:/Unity Projects/WOLFE REPO/Team-03-7738-2/Wolfehunter/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>F:/Unity Projects/Wolfehunter/Team-03-7738/Wolfehunter/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>F:/Unity Projects/WOLFE REPO/Team-03-7738-2/Wolfehunter/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>F:/Unity Projects/Wolfehunter/Team-03-7738/Wolfehunter/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>F:/Unity Projects/WOLFE REPO/Team-03-7738-2/Wolfehunter/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>F:/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -549,13 +549,13 @@
       <HintPath>F:/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>F:/Unity Projects/Wolfehunter/Team-03-7738/Wolfehunter/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>F:/Unity Projects/WOLFE REPO/Team-03-7738-2/Wolfehunter/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>F:/Unity Projects/Wolfehunter/Team-03-7738/Wolfehunter/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>F:/Unity Projects/WOLFE REPO/Team-03-7738-2/Wolfehunter/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>F:/Unity Projects/Wolfehunter/Team-03-7738/Wolfehunter/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>F:/Unity Projects/WOLFE REPO/Team-03-7738-2/Wolfehunter/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>F:/Unity/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
