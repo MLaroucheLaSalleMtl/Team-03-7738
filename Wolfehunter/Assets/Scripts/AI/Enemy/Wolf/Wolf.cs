@@ -28,7 +28,7 @@ public class Wolf : Enemy
     }
 
     private void Update()
-    {
+    {       
         CheckStatus();
         Move();
         Attack();
@@ -78,13 +78,32 @@ public class Wolf : Enemy
         if (Vector3.Distance(player.transform.position, transform.position) < AtkRange)
         {
 
-                if (canAttack == true && !attacking)
-                {
-                    anim.SetTrigger("Attack");
-                    attacking = true;
-                }
+            if (canAttack == true && !attacking)
+            {
 
-            
+                StartCoroutine(EnemyTurn());
+            }
+        }
+    }
+
+    void Attacking()
+    {
+        anim.SetTrigger("Attack");
+        attacking = true;
+    }
+
+    IEnumerator EnemyTurn()
+    {
+        Quaternion newDir = Quaternion.LookRotation(player.transform.position - this.transform.position);
+        this.transform.rotation = Quaternion.Slerp(this.transform.rotation, newDir, 1.5f * Time.deltaTime);
+        if (this.transform.rotation == newDir)
+        {
+            Attacking();
+        }
+        else
+        {
+            yield return new WaitForSeconds(2f);
+            Attacking();
         }
     }
 
