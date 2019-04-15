@@ -85,8 +85,7 @@ public class WolfBoss : Enemy
                 //Debug.Log("Player in sight!");
                 if (canAttack == true && !attacking)
                 {
-                    anim.SetTrigger("Attack");
-                    attacking = true;
+                    StartCoroutine(EnemyTurn());
                 }
             }
             else
@@ -98,6 +97,20 @@ public class WolfBoss : Enemy
             }
 
         }
+    }
+
+    void Attacking()
+    {
+        anim.SetTrigger("Attack");
+        attacking = true;
+    }
+
+    IEnumerator EnemyTurn()
+    {
+        Quaternion newDir = Quaternion.LookRotation(player.transform.position - this.transform.position);
+        this.transform.rotation = Quaternion.Slerp(this.transform.rotation, newDir, 1.5f * Time.deltaTime);
+        yield return new WaitForSeconds(2f);
+        Attacking();
     }
 
     //From attack animation event
