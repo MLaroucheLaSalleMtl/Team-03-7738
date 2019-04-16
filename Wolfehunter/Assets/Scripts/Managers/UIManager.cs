@@ -15,6 +15,13 @@ public class UIManager : MonoBehaviour
     private Player player;
 
     //[SerializeField]private Image[] heart;
+    [Header("DIALOGUE ELEMENTS")]
+    [SerializeField] private Image dialoguePic;
+    [SerializeField] private Image selfPic;
+    [SerializeField] private Image dogPic;
+    [SerializeField] private Image wizardPic;
+   // [SerializeField] private Image blacksmithPic;
+   // [SerializeField] private Image mayorPic;
     [Header("RESOURCE ELEMENTS")]
     [SerializeField] private Image healthBar;
     [SerializeField] private Image staminaBar;
@@ -48,6 +55,14 @@ public class UIManager : MonoBehaviour
     public Image[] Fang { get => fang; set => fang = value; }
     public GameObject DeathPanel { get => deathPanel; set => deathPanel = value; }
     public GameObject WinPanel { get => winPanel; set => winPanel = value; }
+    public Image DialoguePic { get => dialoguePic; set => dialoguePic = value; }
+    public Image SelfPic { get => selfPic; set => selfPic = value; }
+    public Image DogPic { get => dogPic; set => dogPic = value; }
+    public Image WizardPic { get => wizardPic; set => wizardPic = value; }
+
+    // public Image WizardPic { get => wizardPic; set => wizardPic = value; }
+    //  public Image BlacksmithPic { get => blacksmithPic; set => blacksmithPic = value; }
+    // public Image MayorPic { get => mayorPic; set => mayorPic = value; }
 
 
 
@@ -79,6 +94,16 @@ public class UIManager : MonoBehaviour
         //foodMax = player.MaxFood;
     }
 
+    public void TriggerDialogue()
+    {
+        QuestPanel.gameObject.SetActive(true);
+        Invoke("CloseDialogue", 3f);
+    }
+
+    private void CloseDialogue()
+    {
+        //anim trigger;
+    }
 
     public void FadePanel()
     {

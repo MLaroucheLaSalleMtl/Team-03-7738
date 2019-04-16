@@ -19,10 +19,19 @@ public class CombatManager : MonoBehaviour
 
     [SerializeField] BoxCollider swordCollider;
     [SerializeField] ParticleSystem trail;
+
+    [SerializeField] BoxCollider swordCollider2;
+    [SerializeField] ParticleSystem trail2;
     [SerializeField] AudioSource woosh;
 
     public bool Blocking { get => blocking; set => blocking = value; }
     public bool Rolling { get => rolling; set => rolling = value; }
+
+    public void UpdateWeapon()
+    {
+        swordCollider = swordCollider2;
+        trail = trail2;
+    }
 
     void Start()
     {

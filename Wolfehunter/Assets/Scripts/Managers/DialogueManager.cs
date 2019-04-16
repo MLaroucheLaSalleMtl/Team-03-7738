@@ -15,6 +15,7 @@ public class DialogueManager : MonoBehaviour
     private int index;
     private bool next;
     private bool questFinished;
+    private bool read;
 
     private GameManager game;
     private UIManager ui;
@@ -34,24 +35,35 @@ public class DialogueManager : MonoBehaviour
         NextSentence();
     }
 
+    private void Timer()
+    {
+        read = true;
+    }
+
     public void StartDialogue()
     {
         if (!questFinished)
         {
             if (!dialogueStarted && !ObjectiveReached)
             {
+                read = false;
+                Invoke("Timer", .75f);
                 dialogueStarted = true;
                 ui.QuestPanel.gameObject.SetActive(true);
-                ui.NpcName.text = npcName;
+                ui.DialoguePic.sprite = ui.DogPic.sprite;
+                ui.NpcName.text = "Good Boy";
                 StopAllCoroutines();
                 StartCoroutine(CharAppear(sentence[index]));
             }
             else if (!dialogueStarted && ObjectiveReached)
             {
+                read = false;
+                Invoke("Timer", .75f);
                 dialogueStarted = true;
                 //anim.SetBool("Start", true);
                 ui.QuestPanel.gameObject.SetActive(true);
-                ui.NpcName.text = npcName;
+                ui.DialoguePic.sprite = ui.DogPic.sprite;
+                ui.NpcName.text = "Good Boy";
                 StopAllCoroutines();
                 index = 0;
                 StartCoroutine(CharAppear(winSentence[index]));
@@ -61,9 +73,12 @@ public class DialogueManager : MonoBehaviour
         {
             if (!dialogueStarted)
             {
+                read = false;
+                Invoke("Timer", .75f);
                 dialogueStarted = true;
                 ui.QuestPanel.gameObject.SetActive(true);
-                ui.NpcName.text = npcName;
+                ui.DialoguePic.sprite = ui.DogPic.sprite;
+                ui.NpcName.text = "Good Boy";
                 StopAllCoroutines();
                 StartCoroutine(CharAppear(postSentence));
             }
@@ -76,8 +91,10 @@ public class DialogueManager : MonoBehaviour
     {
         if (!questFinished)
         {
-            if (dialogueStarted && Input.GetButtonDown("Action") && !ObjectiveReached)
+            if (dialogueStarted && Input.GetButtonDown("Action") && !ObjectiveReached && read == true)
             {
+                ui.DialoguePic.sprite = ui.DogPic.sprite;
+                ui.NpcName.text = "Good Boy";
                 if (index < sentence.Length - 1)
                 {
                     StopAllCoroutines();
@@ -93,6 +110,8 @@ public class DialogueManager : MonoBehaviour
             }
             else if (dialogueStarted && Input.GetButtonDown("Action") && ObjectiveReached)
             {
+                ui.DialoguePic.sprite = ui.DogPic.sprite;
+                ui.NpcName.text = "Good Boy";
                 if (index < winSentence.Length - 1)
                 {
                     StopAllCoroutines();
