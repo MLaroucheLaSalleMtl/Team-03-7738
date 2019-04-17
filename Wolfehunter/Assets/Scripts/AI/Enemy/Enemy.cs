@@ -6,7 +6,7 @@ public abstract class Enemy : MonoBehaviour
 {
     [SerializeField] private float maxHealth;
     [SerializeField] private float health;
-    [SerializeField] private float damage;
+    [SerializeField] private int damage;
     [SerializeField] private float atkSpeed;
     [SerializeField] private float atkRange;
     [SerializeField] private float chaseRange;
@@ -17,7 +17,7 @@ public abstract class Enemy : MonoBehaviour
 
     public float Health { get => health; set => health = value; }
     public float MaxHealth { get => maxHealth; set => maxHealth = value; }
-    public float Damage { get => damage; set => damage = value; }
+    public int Damage { get => damage; set => damage = value; }
     public float AtkRange { get => atkRange; set => atkRange = value; }
     public float AtkSpeed { get => atkSpeed; set => atkSpeed = value; }
     public float ChaseRange { get => chaseRange; set => chaseRange = value; }

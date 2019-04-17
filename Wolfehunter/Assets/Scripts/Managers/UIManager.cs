@@ -20,8 +20,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Image selfPic;
     [SerializeField] private Image dogPic;
     [SerializeField] private Image wizardPic;
-   // [SerializeField] private Image blacksmithPic;
-   // [SerializeField] private Image mayorPic;
+    [SerializeField] private Image mayorPic;
+    [SerializeField] private Image blacksmithPic;
+
     [Header("RESOURCE ELEMENTS")]
     [SerializeField] private Image healthBar;
     [SerializeField] private Image staminaBar;
@@ -38,9 +39,14 @@ public class UIManager : MonoBehaviour
     [Header("FANG ELEMENTS")]
     [SerializeField] private GameObject fangPanel;
     [SerializeField] private Image[] fang = new Image[5];
+    [Header("WOLFKING ELEMENTS")]
+    [SerializeField] private GameObject wolfKingHPObj;
+    [SerializeField] private Image wolfKingHP;
     [Header("MENU ELEMENTS")]
+    [SerializeField] private TextMeshProUGUI retryText;
     [SerializeField] private GameObject deathPanel;
     [SerializeField] private GameObject winPanel;
+    [SerializeField] private GameObject menuButton;
 
     public Image StaminaBar { get => staminaBar; set => staminaBar = value; }
     public Image HealthBar { get => healthBar; set => healthBar = value; }
@@ -59,6 +65,12 @@ public class UIManager : MonoBehaviour
     public Image SelfPic { get => selfPic; set => selfPic = value; }
     public Image DogPic { get => dogPic; set => dogPic = value; }
     public Image WizardPic { get => wizardPic; set => wizardPic = value; }
+    public Image MayorPic { get => mayorPic; set => mayorPic = value; }
+    public Image BlacksmithPic { get => blacksmithPic; set => blacksmithPic = value; }
+    public TextMeshProUGUI RetryText { get => retryText; set => retryText = value; }
+    public GameObject MenuButton { get => menuButton; set => menuButton = value; }
+    public GameObject WolfKingHPObj { get => wolfKingHPObj; set => wolfKingHPObj = value; }
+    public Image WolfKingHP { get => wolfKingHP; set => wolfKingHP = value; }
 
     // public Image WizardPic { get => wizardPic; set => wizardPic = value; }
     //  public Image BlacksmithPic { get => blacksmithPic; set => blacksmithPic = value; }

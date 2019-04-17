@@ -54,7 +54,7 @@ public class MenuManager : MonoBehaviour
         BackGround = GameObject.Find("BackGround");
         TextName = GameObject.Find("BrandName");
         TextSetting = GameObject.Find("TextSetting");
-        BackGround.SetActive(false);
+       // BackGround.SetActive(false);
     }
     void Update()
     {

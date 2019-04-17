@@ -25,14 +25,28 @@ public class Player : MonoBehaviour
     public float CurrStamina { get => currStamina; set => currStamina = value; }
     public float MaxStamina { get => maxStamina; set => maxStamina = value; }
     public int DamageGiven { get => damageGiven; set => damageGiven = value; }
+    public bool CheckDead { get => checkDead; set => checkDead = value; }
 
+    private bool checkDead;
+
+    private RevivePlayer revive;
     private CombatManager combat;
     private GameManager game;
     private UIManager ui;
 
+    void CheckAlive()
+    {
+        if (CurrLife <= 0 && !checkDead)
+        {
+            checkDead = true;
+            Die();
+            Time.timeScale = 0f;
+        }
+    }
+
     public void TakeDamage(int damage)
     {
-        if (CurrLife > 50)
+        if (CurrLife >= 1)
         {
             CurrLife -= damage;
         }
@@ -46,12 +60,14 @@ public class Player : MonoBehaviour
 
     void Die()
     {
+        ui.RetryText.text = "Retry" + "(" + revive.Lives.ToString() + ")";
         ui.DeathPanel.gameObject.SetActive(true);
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        revive = FindObjectOfType<RevivePlayer>();
         ui = FindObjectOfType<UIManager>();
         combat = GetComponent<CombatManager>();
         game = FindObjectOfType<GameManager>();
@@ -71,6 +87,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        CheckAlive();
         ui.HealthBar.fillAmount = CurrLife / MaxLife;
     }
 }

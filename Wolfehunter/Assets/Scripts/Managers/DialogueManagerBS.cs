@@ -58,7 +58,7 @@ public class DialogueManagerBS : MonoBehaviour
                 Invoke("Timer", .75f);
                 dialogueStarted = true;
                 ui.QuestPanel.gameObject.SetActive(true);
-                ui.DialoguePic.sprite = ui.WizardPic.sprite;
+                ui.DialoguePic.sprite = ui.BlacksmithPic.sprite;
                 ui.NpcName.text = npcName;
                 StopAllCoroutines();
                 StartCoroutine(CharAppear(sentence[index]));
@@ -70,7 +70,7 @@ public class DialogueManagerBS : MonoBehaviour
                 dialogueStarted = true;
                 //anim.SetBool("Start", true);
                 ui.QuestPanel.gameObject.SetActive(true);
-                ui.DialoguePic.sprite = ui.WizardPic.sprite;
+                ui.DialoguePic.sprite = ui.BlacksmithPic.sprite;
                 ui.NpcName.text = npcName;
                 StopAllCoroutines();
                 index = 0;
@@ -85,7 +85,7 @@ public class DialogueManagerBS : MonoBehaviour
                 Invoke("Timer", .75f);
                 dialogueStarted = true;
                 ui.QuestPanel.gameObject.SetActive(true);
-                ui.DialoguePic.sprite = ui.WizardPic.sprite;
+                ui.DialoguePic.sprite = ui.BlacksmithPic.sprite;
                 ui.NpcName.text = npcName;
                 StopAllCoroutines();
                 StartCoroutine(CharAppear(postSentence));
@@ -102,7 +102,7 @@ public class DialogueManagerBS : MonoBehaviour
         {
             if (dialogueStarted && Input.GetButtonDown("Action") && !ObjectiveReached && read == true)
             {
-                ui.DialoguePic.sprite = ui.WizardPic.sprite;
+                ui.DialoguePic.sprite = ui.BlacksmithPic.sprite;
                 ui.NpcName.text = npcName;
                 if (index < sentence.Length - 1)
                 {
@@ -130,7 +130,7 @@ public class DialogueManagerBS : MonoBehaviour
             }
             else if (dialogueStarted && Input.GetButtonDown("Action") && ObjectiveReached)
             {
-                ui.DialoguePic.sprite = ui.WizardPic.sprite;
+                ui.DialoguePic.sprite = ui.BlacksmithPic.sprite;
                 ui.NpcName.text = npcName;
                 if (index < winSentence.Length - 1)
                 {
