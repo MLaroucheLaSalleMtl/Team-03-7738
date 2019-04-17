@@ -20,8 +20,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 30
-    width: 1904
-    height: 931
+    width: 1638
+    height: 788
   m_MinSize: {x: 713, y: 498}
   m_MaxSize: {x: 18008, y: 14048}
   vertical: 0
@@ -125,8 +125,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 965
-    height: 931
+    width: 830
+    height: 788
   m_MinSize: {x: 202, y: 448}
   m_MaxSize: {x: 4002, y: 8048}
   vertical: 1
@@ -552,7 +552,7 @@ MonoBehaviour:
   - {fileID: 13}
   m_Position:
     serializedVersion: 2
-    x: 965
+    x: 830
     y: 0
     width: 528
     height: 931
@@ -620,18 +620,18 @@ MonoBehaviour:
       m_ExpandedIDs: c23dffff9c63ffff9a85ffffaa85ffff1e9dffff3a9dffffb4fbfffff26600008c680000a2680000686b0000ba7500000677000010780000d07e000092840000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: Save
+        m_OriginalName: Save
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: -66468
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 11}
       m_SearchString: 
@@ -709,7 +709,7 @@ MonoBehaviour:
   m_StartGridSize: 16
   m_LastFolders: []
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: F:\Unity Projects\WOLFE REPO\Team-03-7738-2\Wolfehunter
+  m_LastProjectPath: D:\Unity Group Project 2019\Team-03-7738-2\Wolfehunter
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:

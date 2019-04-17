@@ -68,6 +68,8 @@ public class Wolf : Enemy
         {
             onlyOnce = true;
             hitPoint = this.gameObject.GetComponent<Collider>().ClosestPointOnBounds(transform.position);
+            var death = this.gameObject.GetComponent<AudioSource>();
+            death.Play();
             Destroy(Instantiate(deathEffect, hitPoint, Quaternion.Euler(270, 3, 0)), 2);
             game.WolfKill += 1;
         }
