@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float maxFood;
     [SerializeField] private float currCold;
     [SerializeField] private float maxCold;
+    [SerializeField] AudioSource death, forest, birds;
 
     private int damageGiven;
 
@@ -46,6 +47,9 @@ public class Player : MonoBehaviour
 
     void Die()
     {
+        forest.Stop();
+        birds.Stop();
+        death.Play();
         ui.DeathPanel.gameObject.SetActive(true);
     }
 

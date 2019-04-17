@@ -33,7 +33,7 @@ public class Loading : MonoBehaviour
         if (Input.anyKey)
         {
             loadingText.GetComponent<Text>().text = "Loading...";
-            StartCoroutine(LoadAsynchronously("TestScene"));
+            StartCoroutine(LoadAsynchronously("MainScene"));
         }
     }
 }
