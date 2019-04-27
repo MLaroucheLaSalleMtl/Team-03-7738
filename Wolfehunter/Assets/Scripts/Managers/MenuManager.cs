@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
+
+    private AsyncOperation async;
     /* Summary : Class that control 
      * the Menu scene
     *//*
@@ -26,16 +28,21 @@ public class MenuManager : MonoBehaviour
          anim.SetBool("isDisplayed", true);
      }*/
 
-    
+
 
     public void Load(string scene)
     {
-        SceneManager.LoadSceneAsync(scene);
+       // SceneManager.LoadSceneAsync(scene);
     }
 
-    public void StartGame()
+    public void StartGame(int i)
     {
-        Load("LoadingScene");
+        if (async == null)
+        {
+            Time.timeScale = 1;
+            async = SceneManager.LoadSceneAsync(i);
+            async.allowSceneActivation = true;
+        }
 
     }
     /*public void TestGame()

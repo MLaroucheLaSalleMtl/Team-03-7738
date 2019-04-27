@@ -6,34 +6,21 @@ using UnityEngine.SceneManagement;
 
 public class Loading : MonoBehaviour
 {
-    [SerializeField] private GameObject loadingPanel;
-    [SerializeField] private Slider loadingBar;
-    [SerializeField] private GameObject loadingText;
-
-    IEnumerator LoadAsynchronously(string Scene)
-    {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(Scene);
-        loadingPanel.SetActive(true);
-        while (!operation.isDone)
-        {
-            float progress = Mathf.Clamp01(operation.progress / .9f);
-            loadingBar.value = progress;
-            yield return null;
-        }
-    }
-   
-
+    private AsyncOperation async;
     void Start()
     {
-        loadingText = GameObject.Find("LoadingText");
+        LoadScene(2);
     }
-    
-    void LateUpdate()
+
+    public void LoadScene(int n)
     {
-        if (Input.anyKey)
+        if (async == null)
         {
-            loadingText.GetComponent<Text>().text = "Loading...";
-            StartCoroutine(LoadAsynchronously("MainScene"));
+            Time.timeScale = 1;
+            async = SceneManager.LoadSceneAsync(n);
+            async.allowSceneActivation = true;
         }
+
+
     }
 }
